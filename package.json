@@ -1,0 +1,23 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html public/index.html",
+    "run": "parcel index.html",
+    "watch": "parcel watch index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "firebase": "^5.3.1",
+    "static": "^2.0.0"
+  },
+  "devDependencies": {
+    "cssnano": "^4.0.5"
+  }
+}
