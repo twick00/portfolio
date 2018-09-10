@@ -35,23 +35,6 @@ import "babel-polyfill"
             });
         }
 
-        /*--------------------
-            * Smooth Scroll
-        ----------------------*/
-        FuncObj.HeaderScroll = function () {
-            $('a[href*="#"]:not([href="#"])').on('click', function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: target.offset.top - 65,
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-        }
 
         /*--------------------
             * Header Fixed
@@ -66,30 +49,13 @@ import "babel-polyfill"
         }
 
         /*--------------------
-            * Tyoe It
-        ----------------------*/
-        FuncObj.mTypeIt = function () {
-            let type = new TypeIt('#type-it', {
-                speed: 100,
-                loop: false,
-                strings: [
-                    'Professional Web Developer',
-                ],
-                breakLines: false
-            }).pause(4000)
-                .delete(33).options({speed: 150}).type("Professional React Ninja").pause(1000)
-                .delete(11).type("[Object object]").delete(15).type("Web Developer").options({cursor: false})
-        }
-
-
-        /*--------------------
             * Progress Bar
         ----------------------*/
         FuncObj.ProgressBar = function () {
             $(".progress .progress-bar").each(function () {
                 var docViewTop = $(window).scrollTop();
                 var elemTop = $(this).offset().top;
-                var progressWidth = $(this).attr('aria-valuenow') + '%';
+                var progressWidth = $(this).attr('aria-valuenow');
                 if ((elemTop >= docViewTop)) {
                     $(this).css({
                         width: progressWidth
@@ -128,7 +94,7 @@ import "babel-polyfill"
             FuncObj.Counter();
             FuncObj.ProgressBar();
             FuncObj.HeaderScroll();
-            FuncObj.mTypeIt();
+            // FuncObj.mTypeIt();
             FuncObj.HeaderSticky();
         });
 

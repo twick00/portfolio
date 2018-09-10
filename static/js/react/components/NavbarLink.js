@@ -13,7 +13,7 @@ export const NavbarLink = (props) => {
 export const Link = (props) => {
     return (
         <li className="nav-item">
-            <a className="nav-link" href={props.href}>{props.text}</a>
+            <a className="nav-link" href={props.href}>{props.children}</a>
         </li>
     )
 }

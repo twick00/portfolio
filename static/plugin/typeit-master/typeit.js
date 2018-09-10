@@ -10,7 +10,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global.TypeIt = factory());
+	(global.TypeItComponent = factory());
 }(this, (function () { 'use strict';
 
 window.TypeItDefaults = {
@@ -673,7 +673,7 @@ var TypeIt = function () {
      * If used after typing has started, will append strings to the end of the existing queue. If used when typing is paused, will restart it.
      *
      * @param  {string} string The string to be typed.
-     * @return {object} TypeIt instance
+     * @return {object} TypeItComponent instance
      */
 
   }, {
