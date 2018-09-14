@@ -22,7 +22,7 @@ export default class Tabs extends Component {
                     backgroundColor: "#868e96"
                 }}>
                     {this.props.children.map((el, i) => {
-                        return <button onClick={() => this.setState({active: i})} key={i} type={"button"} className={"btn btn-secondary text-uppercase"} style={{width:"33.3%"}}>{el.props.children.props.id}</button>
+                        return <button onClick={() => this.setState({active: i})} key={i} type={"button"} className={"btn btn-secondary text-uppercase"} style={this.state.active === i ? {width:"33.3%", backgroundColor:"#727b84"}: {width:"33.3%"}}>{el.props.children.props.id}</button>
                     })}
                 </div>
                 {this.props.children.filter((el, i) => {
